@@ -8,7 +8,7 @@ app.use(express.json());
 
 const web3 = new Web3(new Web3.providers.HttpProvider(process.env.PROVIDER_URL));
 const contractABI = tracking.abi;
-const contractAddress = '0xb3CbeE4F6a8868BcC33DA1494d4b951040b0a025';
+const contractAddress = process.env.CONTRACT_ADDRESS;
 const contract = new web3.eth.Contract(contractABI, contractAddress);
 
 // Add wallet and load the account from the private key
